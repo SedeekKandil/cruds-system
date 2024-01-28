@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        
+        <h2 class="text-center py-3">CRUDs system</h2>
+        <input class="form-control my-3 w-50 m-auto" id="prodName" type="text" placeholder="Enter product name">
+        <input class="form-control my-3 w-50 m-auto" id="prodCategory" type="text" placeholder="Enter product category">
+        <input class="form-control my-3 w-50 m-auto" id="prodPrice" type="number" placeholder="Enter product price">
+        <textarea class="form-control my-3 w-50 m-auto" id="prodDesc" cols="30" rows="4" placeholder="Enter product desc"></textarea>
+        
+
+        <div class="div d-flex justify-content-center">
+            <button class="btn btn-primary " onclick="addInputValue()">add product</button>
+        </div>
+
+        <input class="form-control my-3 w-50 m-auto" onkeyup="search(this.value)" type="search" placeholder="search.." >
+
+        <div>
+            <table class="table">
+                <thead>
+                    <th>Index</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody id="tbodyId">
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
