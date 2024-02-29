@@ -13,8 +13,8 @@ var productList =[]
 // }
 
 
-productList = JSON.parse(localStorage.getItem("products"))
-display()
+// productList = JSON.parse(localStorage.getItem("products"))
+// display()
 
 function addInputValue(){
 
@@ -36,7 +36,7 @@ function add(){
     }
 
     productList.push(product)
-    localStorage.setItem("products", JSON.stringify(productList))
+    // localStorage.setItem("products", JSON.stringify(productList))
 }
 
 function display(){
@@ -72,7 +72,7 @@ function clear(){
 
 function deleteProd(index){
 productList.splice(index,1)
-localStorage.setItem("products", JSON.stringify(productList))
+// localStorage.setItem("products", JSON.stringify(productList))
 display()
 }
 
@@ -125,6 +125,6 @@ function updateProduct(){
     productList[productIndex].price= productPriceInput.value
     productList[productIndex].description= productDescInput.value
 
-    localStorage.setItem("products", JSON.stringify(productList))
+    // localStorage.setItem("products", JSON.stringify(productList))
     display()
 }
