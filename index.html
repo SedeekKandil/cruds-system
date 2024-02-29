@@ -13,7 +13,8 @@
         
 
         <div class="div d-flex justify-content-center">
-            <button class="btn btn-primary " onclick="addInputValue()">add product</button>
+            <button class="btn btn-primary " id="addBtn" onclick="addInputValue()">Add product</button>
+            <button class="btn btn-success " id="updateBtn"  onclick="updateProduct()">Update product</button>
         </div>
 
         <input class="form-control my-3 w-50 m-auto" onkeyup="search(this.value)" type="search" placeholder="search.." >
@@ -27,6 +28,7 @@
                     <th>Price</th>
                     <th>Description</th>
                     <th>Delete</th>
+                    <th>Update</th>
                 </thead>
                 <tbody id="tbodyId">
                     

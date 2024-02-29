@@ -7,13 +7,13 @@ var productDescInput = document.getElementById("prodDesc")
 
 
 var productList =[]
-// if(localStorage.getItem("products") != null){
-//     productList = JSON.parse(localStorage.getItem("products"))
-//     display()
-// }
+if(localStorage.getItem("products") != null){
+    productList = JSON.parse(localStorage.getItem("products"))
+    display()
+}
 
 
-// productList = JSON.parse(localStorage.getItem("products"))
+productList = JSON.parse(localStorage.getItem("products"))
 display()
 
 function addInputValue(){
@@ -36,7 +36,7 @@ function add(){
     }
 
     productList.push(product)
-    // localStorage.setItem("products", JSON.stringify(productList))
+    localStorage.setItem("products", JSON.stringify(productList))
 }
 
 function display(){
@@ -52,6 +52,7 @@ function display(){
                         <td>${productList[i].price}</td>
                         <td>${productList[i].description}</td>
                         <td><button class="btn btn-danger" onclick="deleteProd(${i})">Delete</button></td>
+                        <td><button class="btn btn-success" onclick="showUpdate(${i})">Update</button></td>
                     </tr>
         
         
@@ -71,7 +72,7 @@ function clear(){
 
 function deleteProd(index){
 productList.splice(index,1)
-// localStorage.setItem("products", JSON.stringify(productList))
+localStorage.setItem("products", JSON.stringify(productList))
 display()
 }
 
@@ -97,4 +98,33 @@ function search(value){
     }
 
     document.getElementById("tbodyId").innerHTML=newCartona
+}
+
+var productIndex = 0
+
+function showUpdate(index){
+
+    productIndex = index
+
+    productNameInput.value= productList[index].name
+    productCategoryInput.value= productList[index].category
+    productPriceInput.value= productList[index].price
+    productDescInput.value= productList[index].description
+    window.scrollTo(0,0)
+
+    document.getElementById('updateBtn').style.display="block"
+    document.getElementById('addBtn').style.display="none"
+}
+
+
+function updateProduct(){
+    document.getElementById('updateBtn').style.display="none"
+    document.getElementById('addBtn').style.display="block"
+    productList[productIndex].name= productNameInput.value
+    productList[productIndex].category= productNameInput.value
+    productList[productIndex].price= productNameInput.value
+    productList[productIndex].description= productNameInput.value
+
+    localStorage.setItem("products", JSON.stringify(productList))
+    display()
 }
