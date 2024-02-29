@@ -7,10 +7,10 @@ var productDescInput = document.getElementById("prodDesc")
 
 
 var productList =[]
-if(localStorage.getItem("products") != null){
-    productList = JSON.parse(localStorage.getItem("products"))
-    display()
-}
+// if(localStorage.getItem("products") != null){
+//     productList = JSON.parse(localStorage.getItem("products"))
+//     display()
+// }
 
 
 productList = JSON.parse(localStorage.getItem("products"))
@@ -121,9 +121,9 @@ function updateProduct(){
     document.getElementById('updateBtn').style.display="none"
     document.getElementById('addBtn').style.display="block"
     productList[productIndex].name= productNameInput.value
-    productList[productIndex].category= productNameInput.value
-    productList[productIndex].price= productNameInput.value
-    productList[productIndex].description= productNameInput.value
+    productList[productIndex].category= productCategoryInput.value
+    productList[productIndex].price= productPriceInput.value
+    productList[productIndex].description= productDescInput.value
 
     localStorage.setItem("products", JSON.stringify(productList))
     display()
